@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    /* Add some basic styling to the forms */
+    .container-fluid {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .form-header {
+      background-color: #16a085;
+    
+      text-align: center;
+      padding: 20px;
+    }
+
+    .form-header h2 {
+      margin: 0;
+    }
+
+    .form-toggle {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .form-toggle a {
+      color: #16a085;
+      text-decoration: none;
+    }
+
+    .form-content {
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .form-content.signup-form-active {
+      transform: translateX(-100%);
+    }
+
+    .form-content.login-form-active {
+      transform: translateX(0);
+    }
+
+   
+
+    .form-content label {
+      margin-bottom: 5px;
+    }
+
+    .form-content input[type="text"],
+    .form-content input[type="password"] {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-content button {
+      padding: 5px 10px;
+      background-color:  #16a085;
+      color: #fff;
+      border: 1px solid #16a085;
+      border-radius: .5rem;
+      cursor: pointer;
+    }
+    .form-content button:hover {
+      padding: 5px 10px;
+      color:  #16a085;
+      background-color: #fff;
+      border: 1px solid #16a085;
+      border-radius: .5rem;
+      cursor: pointer;
+    }
+  </style>
+<body style="background-image: url(https://img.freepik.com/premium-photo/portrait-confident-female-surgeon-standing-with-arms-crossed-operating-room_896008-483.jpg?w=740);background-repeat: no-repeat;background-size: cover;">
+    
+
+<section class="container-fluid" >
+    <div class="container-fluid">
+        <div class="form-header">
+          <h2> <a class="navbar-brand " style="color: rgb(7, 7, 7);font-weight:700;" href="#"><span style="color: red;" class="fas fa-heart"></span>
+            <span style="color: #fff;">Well</span> Care</a></h2>
+        </div>
+    
+        <div class="form-toggle">
+          <a href="#" onclick="toggleForm('login')">Login</a> / 
+          <a href="#" onclick="toggleForm('signup')">Signup</a>
+        </div>
+    
+        <div class="form-content">
+          <div id="login-form">
+            <h3>Login</h3>
+            <form>
+              <label for="login-username">Username:</label>
+              <input type="text" id="login-username" required>
+    
+              <label for="login-password">Password:</label>
+              <input type="text" id="login-password" required>
+    
+              <button type="submit">Login</button>
+            </form>
+          </div>
+    
+          <div id="signup-form" style="display: none;">
+            <h3>Signup</h3>
+            <form>
+              <label for="signup-username">Username:</label>
+              <input type="text" id="signup-username" required>
+
+              <label for="signup-username">First nmae:</label>
+              <input type="text" id="signup-username" required>
+
+              <label for="signup-username">Last Name:</label>
+              <input type="text" id="signup-username" required>
+                
+              <label for="signup-username">Mail:</label>
+              <input type="text" id="signup-username" required>
+
+              <label for="signup-username">phone:</label>
+              <input type="text" id="signup-username" required>
+
+              <label for="signup-password">Password:</label>
+              <input type="text" id="signup-password" required>
+    
+              <button type="submit">Signup</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+</section>
+  <script>
+    function toggleForm(formType) {
+      var loginForm = document.getElementById("login-form");
+      var signupForm = document.getElementById("signup-form");
+
+      if (formType === "login") {
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+        loginForm.classList.add("login-form-active");
+        signupForm.classList.remove("signup-form-active");
+      } else if (formType === "signup") {
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+        loginForm.classList.remove("login-form-active");
+        signupForm.classList.add("signup-form-active");
+      }
+    }
+  </script>
+  </body>
+{% endblock %}

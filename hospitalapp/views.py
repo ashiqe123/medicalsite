@@ -12,3 +12,12 @@ def lgout(request):
 
 def dt(request):
     return render(request,'detail.html')
+
+def services(request):
+    return render(request,"services.html")
+
+def lg(request):
+    return render(request,'reg.html')
+
+def about(request):
+    return render(request,'about.html')

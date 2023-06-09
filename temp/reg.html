@@ -6,17 +6,18 @@
     .container-fluid {
       max-width: 400px;
       margin: 50px auto;
-      background-color: #fff;
+      
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
       overflow: hidden;
+      
     }
 
     .form-header {
       background-color: #16a085;
     
       text-align: center;
-      padding: 20px;
+      
     }
 
     .form-header h2 {
@@ -78,9 +79,9 @@
 <body style="background-image: url(https://img.freepik.com/premium-photo/portrait-confident-female-surgeon-standing-with-arms-crossed-operating-room_896008-483.jpg?w=740);background-repeat: no-repeat;background-size: cover;">
     
 
-<section class="container-fluid" >
-    <div class="container-fluid">
-        <div class="form-header">
+<section class="container-fluid p-5" >
+    <div class="container-fluid bg-light">
+        <div class="form-header mt-5">
           <h2> <a class="navbar-brand " style="color: rgb(7, 7, 7);font-weight:700;" href="#"><span style="color: red;" class="fas fa-heart"></span>
             <span style="color: #fff;">Well</span> Care</a></h2>
         </div>
@@ -93,7 +94,7 @@
         <div class="form-content">
           <div id="login-form">
             <h3>Login</h3>
-            <form>
+            <form action="{% url 'home' %}">
               <label for="login-username">Username:</label>
               <input type="text" id="login-username" required>
     
